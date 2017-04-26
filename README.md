@@ -36,8 +36,11 @@ Add `no-literal-arguments` to the plugins section of your `.eslintrc` configurat
 }
 ```
 
+## Supported Rules
 
-Then configure the rules you want to use under the rules section.
+### no-literal-arguments
+
+Methods array: array with the method names that you want to check
 
 ```json
 {
@@ -46,8 +49,3 @@ Then configure the rules you want to use under the rules section.
     }
 }
 ```
-
-## Supported Rules
-
-### no-literal-arguments
-options: array with the method names that you want to check
