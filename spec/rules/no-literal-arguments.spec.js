@@ -1,45 +1,22 @@
 const rule = require('../../lib/rules/no-literal-arguments');
+const RuleTester = require("eslint").RuleTester;
 
-describe('no-literal-arguments suite', () => {
-    const FIELD = 'CallExpression';
-    let contextMock;
+let ruleTester = new RuleTester();
 
-    function createNode(){
-        return {};
-    }
+ruleTester.run("no-literal-arguments", rule, {
+    valid: [
+        { code: "foo(x)", options: [] },
+        { code: "foo(x)", options: [['foo']] },
+        { code: "bar.foo(x)", options: [['foo']] },
+        { code: "foo(A.x)", options: [['foo']] },
+        { code: "bar.foo(A.x)", options: [['foo']] },
 
-    function createContextMock(methodsNames) {
-        let contextMock = jasmine.createSpyObj('context', ['report']);
-        contextMock.options = [methodsNames];
-        return contextMock;
-    }
+    ],
 
-    function getFilter(contextMock) {
-        return rule.create(contextMock)[FIELD];
-    }
-
-    describe('rule config spec', () => {
-        it('should contain docs', () => {
-            expect(rule.meta.docs).toBeDefined();
-        });
-        it('should contain schema', () => {
-            expect(rule.meta.schema).toBeDefined();
-        });
-        it('should contain create', () => {
-            expect(rule.create).toBeDefined();
-            expect(typeof rule.create).toBe('function');
-        });
-    });
-
-    describe('create spec', () => {
-        it('should return an object', () => {
-            expect(rule.create()).toEqual({'CallExpression': jasmine.any(Function)})
-        });
-        it('should not filter anything when no methods name configured', () => {
-            let node = createNode();
-            const contextMock = createContextMock([]);
-            getFilter(contextMock)(node);
-            expect(contextMock.report).not.toHaveBeenCalled();
-        });
-    });
+    invalid: [
+        { code: "foo('x')", options: [['foo']], errors: [{message: ''}]},
+        { code: "bar.foo('x')", options: [['foo']], errors: [{message: ''}]},
+        { code: "foo(1)", options: [['foo']], errors: [{message: ''}]},
+        { code: "bar.foo(1)", options: [['foo']], errors: [{message: ''}]},
+    ]
 });
