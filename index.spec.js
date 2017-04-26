@@ -1,0 +1,4 @@
+"use strict";
+
+const requireIndex = require("requireindex");
+requireIndex(__dirname + "/spec/rules");
