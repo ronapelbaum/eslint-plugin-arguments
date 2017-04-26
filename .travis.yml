@@ -4,4 +4,4 @@ node_js:
 
 scripts:
   - test
-  - coveralls
+  - run coveralls
