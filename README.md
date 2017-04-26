@@ -36,7 +36,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "arguments/no-literal-arguments": 2
+        "arguments/no-literal-arguments": ["error", ["getKey"]]
     }
 }
 ```
