@@ -2,6 +2,7 @@ eslint-plugin-arguments
 ====
 
 [![Build Status](https://travis-ci.org/ronapelbaum/eslint-plugin-arguments.svg?branch=master)](https://travis-ci.org/ronapelbaum/eslint-plugin-arguments)
+[![Coverage Status](https://coveralls.io/repos/github/ronapelbaum/eslint-plugin-arguments/badge.svg?branch=master)](https://coveralls.io/github/ronapelbaum/eslint-plugin-arguments?branch=master)
 [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/ronapelbaum/eslint-plugin-arguments)
 
 eslint plugin to disallow calling method with inline literals as arguments
