@@ -1,6 +1,7 @@
 eslint-plugin-arguments
 ====
 
+[![npm version](https://badge.fury.io/js/eslint-plugin-arguments.svg)](https://badge.fury.io/js/eslint-plugin-arguments)
 [![Build Status](https://travis-ci.org/ronapelbaum/eslint-plugin-arguments.svg?branch=master)](https://travis-ci.org/ronapelbaum/eslint-plugin-arguments)
 [![Coverage Status](https://coveralls.io/repos/github/ronapelbaum/eslint-plugin-arguments/badge.svg?branch=master)](https://coveralls.io/github/ronapelbaum/eslint-plugin-arguments?branch=master)
 [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/ronapelbaum/eslint-plugin-arguments)
@@ -35,8 +36,11 @@ Add `no-literal-arguments` to the plugins section of your `.eslintrc` configurat
 }
 ```
 
+## Supported Rules
 
-Then configure the rules you want to use under the rules section.
+### no-literal-arguments
+
+Methods array: array with the method names that you want to check
 
 ```json
 {
@@ -45,8 +49,3 @@ Then configure the rules you want to use under the rules section.
     }
 }
 ```
-
-## Supported Rules
-
-### no-literal-arguments
-options: array with the method names that you want to check
