@@ -42,3 +42,6 @@ Then configure the rules you want to use under the rules section.
 ```
 
 ## Supported Rules
+
+### no-literal-arguments
+options: array with the method names that you want to check
