@@ -40,12 +40,31 @@ Add `no-literal-arguments` to the plugins section of your `.eslintrc` configurat
 
 ### no-literal-arguments
 
-Methods array: array with the method names that you want to check
+Methods array: array with the method names that you want to check.
 
 ```json
 {
     "rules": {
-        "arguments/no-literal-arguments": ["error", ["getKey"]]
+        "arguments/no-literal-arguments": [
+            "error", 
+            [
+                "foo"
+            ]
+        ]
     }
 }
+```
+
+When this rule is defined:
+
+```javascript
+foo(x); \\ OK  
+bar.foo(x); \\ OK
+foo(A.x); \\ OK
+bar.foo(A.x); \\ OK
+
+foo('x'); \\ BAD  
+bar.foo('x'); \\ BAD
+foo(10); \\ BAD
+bar.foo(10); \\ BAD
 ```
