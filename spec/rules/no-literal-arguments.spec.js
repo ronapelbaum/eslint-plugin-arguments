@@ -7,6 +7,7 @@ ruleTester.run("no-literal-arguments", rule, {
     valid: [
         { code: "foo(x)", options: [] },
         { code: "foo(x)", options: [['foo']] },
+        { code: "foo('x')", options: [['goo']] },
         { code: "bar.foo(x)", options: [['foo']] },
         { code: "foo(A.x)", options: [['foo']] },
         { code: "bar.foo(A.x)", options: [['foo']] },
