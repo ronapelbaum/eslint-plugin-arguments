@@ -1,4 +1,6 @@
-# eslint-plugin-arguments
+eslint-plugin-arguments
+[![Build Status](https://travis-ci.org/ronapelbaum/eslint-plugin-arguments.svg?branch=master)](https://travis-ci.org/ronapelbaum/eslint-plugin-arguments)
+====
 
 eslint plugin to disallow calling method with inline literals as arguments
 
