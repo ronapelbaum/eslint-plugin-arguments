@@ -1,4 +1,3 @@
-"use strict";
+const requireIndex = require('requireindex');
 
-const requireIndex = require("requireindex");
-requireIndex(__dirname + "/spec/rules");
+requireIndex(`${__dirname}/spec/rules`);

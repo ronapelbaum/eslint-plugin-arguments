@@ -1,18 +1,5 @@
-"use strict";
-
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
-const requireIndex = require("requireindex");
-
-//------------------------------------------------------------------------------
-// Plugin Definition
-//------------------------------------------------------------------------------
-
+const requireIndex = require('requireindex');
 
 // import all rules in lib/rules
-module.exports.rules = requireIndex(__dirname + "/lib/rules");
-
-
+module.exports.rules = requireIndex(`${__dirname}/lib/rules`);
 
