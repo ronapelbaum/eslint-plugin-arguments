@@ -8,37 +8,9 @@ eslint-plugin-arguments
 
 eslint plugin to disallow calling method with inline literals as arguments
 
-## Installation
-
-You'll first need to install [ESLint](http://eslint.org):
-
-```
-$ npm i eslint --save-dev
-```
-
-Next, install `eslint-plugin-arguments`:
-
-```
-$ npm install eslint-plugin-arguments --save-dev
-```
-
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-arguments` globally.
-
-## Usage
-
-Add `no-literal-arguments` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
-
-```json
-{
-    "plugins": [
-        "arguments"
-    ]
-}
-```
-
 ## Supported Rules
 
-### no-literal-arguments
+### `no-literal-arguments`
 
 Methods array: array with the method names that you want to check.
 
@@ -58,13 +30,35 @@ Methods array: array with the method names that you want to check.
 When this rule is defined:
 
 ```javascript
+foo(); \\ OK  
 foo(x); \\ OK  
-bar.foo(x); \\ OK
 foo(A.x); \\ OK
-bar.foo(A.x); \\ OK
+goo('x'); \\OK
+bar.foo(x); \\ OK
 
-foo('x'); \\ BAD  
-bar.foo('x'); \\ BAD
+foo('x'); \\ BAD 
+foo("x"); \\ BAD  
 foo(10); \\ BAD
-bar.foo(10); \\ BAD
+bar.foo('x'); \\ BAD
+```
+
+> **Common Usage:** you need to block somthing like `props.getProp('id')` in order to use only `props.getProp(constants.ID)`
+
+## Installation
+
+```
+npm i -D eslint eslint-plugin-arguments
+```
+> **Note:** If you installed `eslint` globally (using the `-g` flag) then you must also install `eslint-plugin-arguments` globally.
+
+## Usage
+
+Add `arguments` to the plugins section of your `.eslintrc.json` configuration file. (You can omit the `eslint-plugin-` prefix):
+
+```json
+{
+    "plugins": [
+        "arguments"
+    ]
+}
 ```
