@@ -4,7 +4,7 @@
   "description": "eslint plugin to disallow calling method with inline literals as arguments",
   "main": "index.js",
   "scripts": {
-    "eslint": "./node_modules/.bin/eslint * -f table",
+    "eslint": "./node_modules/.bin/eslint **/*.js -f table",
     "istanbul": "./node_modules/.bin/istanbul cover index.spec.js",
     "coveralls": "./node_modules/.bin/istanbul-coveralls",
     "test": "npm run istanbul"
